@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 
 import { DotPattern } from '@/components/dot-pattern'
 import { ThemeProvider } from "@/components/theme-provider"
 
+import Menu from '@/components/Menu'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Montserrat({ subsets: ['latin'] })
 
 
 export const metadata: Metadata = {
@@ -23,14 +24,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative`}>
+      <body className={`${inter.className} relative pb-28`}>
         <DotPattern
-          width={12}
-          height={12}
+          width={10}
+          height={10}
           cx={1}
           cy={1}
           cr={1}
-          className={`${cn("[mask-image:linear-gradient(to_left,white,transparent)]")} absolute inter-0 z-0`}
+          className={`absolute inset-0 z-0 opacity-40`}
         />
         <div className='relative z-10'>
           <ThemeProvider
@@ -42,6 +43,9 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
 
+        </div>
+        <div className='fixed flex flex-row overflow-x-auto w-full justify-center bottom-8  bg-white shadow-lg z-50 '>
+          <Menu />
         </div>
       </body>
     </html >
