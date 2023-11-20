@@ -44,7 +44,7 @@ export default function RootLayout({
           </ThemeProvider>
 
         </div>
-        <div className='fixed flex flex-row overflow-x-auto w-full justify-center bottom-8  bg-white shadow-lg z-50 '>
+        <div className="fixed inset-x-0 bottom-0 flex justify-center items-end z-50">
           <Menu />
         </div>
       </body>
