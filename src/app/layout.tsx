@@ -24,16 +24,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative pb-28`}>
+      <body className={`${inter.className} relative flex p-2 items-en pb-28 justify-center`}>
         <DotPattern
           width={10}
           height={10}
           cx={1}
           cy={1}
           cr={1}
-          className={`absolute inset-0 z-0 opacity-40`}
+          className={`absolute inset-0 z-0 opacity-30`}
         />
-        <div className='relative z-10'>
+        <div className='relative flex max-w-3xl z-10'>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
