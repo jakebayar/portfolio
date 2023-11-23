@@ -1,69 +1,52 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from './ui/button'
-import { HomeIcon } from '@heroicons/react/24/solid'
-
+import { HomeIcon, CommandLineIcon, CameraIcon } from '@heroicons/react/24/solid'
 
 
 const options = [
     {
         route: 'home',
-        icon: 'HomeIcon',
+        icon: HomeIcon,
         alt: 'home icon',
-
     },
     {
-        route: '',
-        icon: '',
-        alt: '',
-
+        route: 'projects',
+        icon: CommandLineIcon,
+        alt: 'terminal icon',
     },
     {
-        route: '',
-        icon: '',
-        alt: '',
-
+        route: 'photography',
+        icon: CameraIcon,
+        alt: 'camera icon',
     },
     {
-        route: '',
-        icon: '',
-        alt: '',
-
+        route: 'home',
+        icon: HomeIcon,
+        alt: 'home icon',
     },
     {
-        route: '',
-        icon: '',
-        alt: '',
-
-    },
-    {
-        route: '',
-        icon: '',
-        alt: '',
-
+        route: 'home',
+        icon: HomeIcon,
+        alt: 'home icon',
     },
 
-]
+];
 
 export default function Menu() {
-
     const renderButtons = () => {
-        const buttons = [];
-        for (let i = 0; i < 8; i++) {
-            buttons.push(
-                <Button key={i} variant="outline" className='w-11 h-11 rounded-2xl text-xs'>
-                    <Image src={'/arrow-icon.svg'} width={30} height={30} alt='arrow icon' />
-                </Button>
-            );
-        }
-        return buttons;
+        return options.map((item, index) => (
+            <Button key={item.route} variant="outline" className='w-11 h-11 rounded-2xl text-xs'>
+                <item.icon className="h-6 w-6 text-slate-500" aria-label={item.alt} />
+            </Button>
+        ));
     };
 
     return (
         <div className="flex flex-row overflow-x-auto no-scrollbar backdrop-blur shadow-xl rounded-3xl bg-slate-300/80 p-2 mx-16 my-4 md:my-8">
 
-            <div className='flex flex-row rounded-2xl gap-1 overflow-x-auto no-scrollbar'>
-                <div className='flex flex-row gap-1'>
+            <div className='flex flex-row rounded-3xl overflow-x-auto no-scrollbar'>
+                <div className='flex flex-row gap-2'>
                     {renderButtons()}
                 </div>
             </div>
