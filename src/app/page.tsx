@@ -20,7 +20,7 @@ const projects = [
     key: 1,
     name: 'Sage',
     href: '#',
-    intro: '- job application tracking platform.',
+    intro: 'is a job application tracking platform.',
     stack: '',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.',
@@ -29,7 +29,7 @@ const projects = [
     key: 2,
     name: 'Flexcache',
     href: '#',
-    intro: '- configurable caching library',
+    intro: 'is a configurable caching library',
     stack: '',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.',
@@ -38,7 +38,7 @@ const projects = [
     key: 3,
     name: 'Tangerine',
     href: '#',
-    intro: '- HR Task Automation platform.',
+    intro: 'is a HR Task Automation platform.',
     stack: '',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.',
@@ -55,7 +55,7 @@ export default function Home() {
   const { setTheme } = useTheme()
 
   return (
-    <main className="flex min-h-screen flex-col items-left justify-between gap-16 p-8 md:p-20 pt-16">
+    <main className="flex min-h-screen flex-col items-left justify-between gap-10 p-8 md:p-20 pt-16">
 
       <header className='flex flex-row items-left'>
 
@@ -87,23 +87,23 @@ export default function Home() {
         <h2 className='font-semibold'>Welcome!</h2>
         <p>Im Jake, a software engineer with a passion for blah blah and something about photography teehee 🙂 </p>
         <div className="flex flex-row gap-2 text-xs">
-          <Button variant="outline" className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
+          <Button variant="ghost" size='sm' className='flex font-light h-6 -ml-2 text-xs gap-1.5 items-center justify-center'>
             Learn More {arrowIcon}
           </Button>
         </div>
       </section>
 
 
-      <section className='flex flex-col text-primary  text-sm gap-4'>
-        <p className='text-sm font-normal tracking-tight text-slate-400 sm:text-md'>Currently</p>
-        <p>Listening to OK THEN by Jordeaux</p>
+      <section className='flex flex-col text-primary text-sm gap-4'>
+        <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Currently</p>
+        <p>Listening to OK THEN by Jordeaux and reading Operating Systems by </p>
       </section>
 
 
 
       <div className='mx-auto w-full'>
         <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
-          <p className='text-sm font-normal tracking-tight text-slate-400 sm:text-md'>Projects</p>
+          <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Projects</p>
         </div>
         <div className='mx-auto mt-4'>
 
@@ -117,7 +117,7 @@ export default function Home() {
                 <Button variant="outline" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
                   Code {arrowIcon}
                 </Button>
-                <Button variant="outline" className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
+                <Button variant="outline" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
                   Visit {arrowIcon}
                 </Button>
               </div>
@@ -130,11 +130,11 @@ export default function Home() {
 
       <div className='flex flex-col gap-4 w-full'>
         <div className='flex flex-col gap-4'>
-          <p className='text-sm font-normal tracking-tight text-slate-400 '>Photography</p>
+          <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md '>Photography</p>
           <p className='text-primary text-xs'>Over the past couple years I’ve built up my photography  skills and have worked on a number of projects. You can check out more by visiting my portfolio below.</p>
 
           <div className="flex flex-row gap-1 text-xs">
-            <Button variant="outline" className='flex h-6 text-xs font-light gap-1.5 items-center justify-center'>
+            <Button variant="ghost" size='sm' className='flex font-light h-6 -ml-2 text-xs gap-1.5 items-center justify-center'>
               Visit Portfolio {arrowIcon}
             </Button>
           </div>
