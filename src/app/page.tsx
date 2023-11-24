@@ -45,7 +45,7 @@ const projects = [
   },
 ];
 
-const arrowIcon = <Image src={'/arrow-icon.svg'} width={'8'} height={'8'} className=' opacity-80' alt='arrow icon' />
+const arrowIcon = <Image src={'/arrow-icon.svg'} width={'6'} height={'6'} className=' opacity-80' alt='arrow icon' />
 
 
 
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
 
-      <section className='flex flex-col text-primary text-sm gap-4'>
+      <section className='flex flex-col text-primary text-sm gap-2'>
         <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Currently</p>
         <p>Listening to OK THEN by Jordeaux and reading Operating Systems by </p>
       </section>
@@ -103,21 +103,21 @@ export default function Home() {
 
       <div className='mx-auto w-full'>
         <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
-          <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Projects</p>
+          <p className='mb-2 font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Projects</p>
         </div>
-        <div className='mx-auto mt-4'>
+        <div className='mx-auto flex flex-col gap-6'>
 
           {projects.map((project) => (
 
-            <article key={project.key} className='flex flex-col gap-4 my-4'>
+            <article key={project.key} className='flex flex-col gap-4'>
               <p className='text-sm'><strong className='font-bold'>{project.name}</strong> {project.intro}</p>
               <p className='text-xs tracking-normal'>{project.description}</p>
               <p className='text-xs'>Stack: </p>
-              <div className="flex flex-row gap-1 text-xs">
-                <Button variant="outline" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
+              <div className="flex flex-row gap-1 text-xs -m-2">
+                <Button variant="link" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
                   Code {arrowIcon}
                 </Button>
-                <Button variant="outline" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
+                <Button variant="link" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
                   Visit {arrowIcon}
                 </Button>
               </div>
@@ -129,12 +129,12 @@ export default function Home() {
       </div>
 
       <div className='flex flex-col gap-4 w-full'>
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-2'>
           <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md '>Photography</p>
           <p className='text-primary text-xs'>Over the past couple years I’ve built up my photography  skills and have worked on a number of projects. You can check out more by visiting my portfolio below.</p>
 
           <div className="flex flex-row gap-1 text-xs">
-            <Button variant="ghost" size='sm' className='flex font-light h-6 -ml-2 text-xs gap-1.5 items-center justify-center'>
+            <Button variant="link" size='sm' className='flex font-light h-6 -ml-2 text-xs gap-1.5 items-center justify-center'>
               Visit Portfolio {arrowIcon}
             </Button>
           </div>
