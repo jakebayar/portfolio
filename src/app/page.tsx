@@ -6,6 +6,11 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
+import Currently from "@/components/Currently"
+import Projects from "@/components/Projects"
+import Photography from "@/components/Photography"
+
+import { FaLinkedin, FaCar } from "react-icons/fa";
 
 import {
   DropdownMenu,
@@ -15,39 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 
-const projects = [
-  {
-    key: 1,
-    name: 'Sage',
-    href: '#',
-    intro: 'is a job application tracking platform.',
-    stack: '',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.',
-  },
-  {
-    key: 2,
-    name: 'Flexcache',
-    href: '#',
-    intro: 'is a configurable caching library',
-    stack: '',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.',
-  },
-  {
-    key: 3,
-    name: 'Tangerine',
-    href: '#',
-    intro: 'is a HR Task Automation platform.',
-    stack: '',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.',
-  },
-];
-
 const arrowIcon = <Image src={'/arrow-icon.svg'} width={'6'} height={'6'} className=' opacity-80' alt='arrow icon' />
-
-
 
 
 export default function Home() {
@@ -58,9 +31,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-left justify-between gap-10 p-8 md:p-20 pt-16">
 
       <header className='flex flex-row items-left'>
-
         <Image src='/jake-logo.svg' width={60} height={60} alt='personal logo' />
-
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon">
@@ -93,42 +64,12 @@ export default function Home() {
         </div>
       </section>
 
+      <Currently />
 
-      <section className='flex flex-col text-primary text-sm gap-2'>
-        <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Currently</p>
-        <p>Listening to OK THEN by Jordeaux and reading Operating Systems by </p>
-      </section>
+      <Projects />
 
-
-
-      <div className='mx-auto w-full'>
-        <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
-          <p className='mb-2 font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Projects</p>
-        </div>
-        <div className='mx-auto flex flex-col gap-6'>
-
-          {projects.map((project) => (
-
-            <article key={project.key} className='flex flex-col gap-4'>
-              <p className='text-sm'><strong className='font-bold'>{project.name}</strong> {project.intro}</p>
-              <p className='text-xs tracking-normal'>{project.description}</p>
-              <p className='text-xs'>Stack: </p>
-              <div className="flex flex-row gap-1 text-xs -m-2">
-                <Button variant="link" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
-                  Code {arrowIcon}
-                </Button>
-                <Button variant="link" size='sm' className='flex font-light h-6 text-xs gap-1.5 items-center justify-center'>
-                  Visit {arrowIcon}
-                </Button>
-              </div>
-
-            </article>
-
-          ))}
-        </div>
-      </div>
-
-      <div className='flex flex-col gap-4 w-full'>
+      <Photography />
+      {/* <div className='flex flex-col gap-4 w-full'>
         <div className='flex flex-col gap-2'>
           <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md '>Photography</p>
           <p className='text-primary text-xs'>Over the past couple years I’ve built up my photography  skills and have worked on a number of projects. You can check out more by visiting my portfolio below.</p>
@@ -146,7 +87,7 @@ export default function Home() {
             <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} className='rounded' />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className='flex flex-col gap-4 text-primary text-xs'>
         <p>This website is a constant work in progress. If you have any feedback please let me know :)</p>
