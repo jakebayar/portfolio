@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
@@ -33,20 +35,20 @@ export default function RootLayout({
           cr={1}
           className={`absolute inset-0 z-0 opacity-30`}
         />
-        <div className='relative flex max-w-3xl z-10'>
+        <main className='relative flex max-w-3xl z-10'>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+            enableSystem={true}
+          // disableTransitionOnChange
           >
             {children}
+            <footer className="fixed inset-x-0 bottom-0 flex justify-center items-end z-50">
+              <Menu />
+            </footer>
           </ThemeProvider>
 
-        </div>
-        <div className="fixed inset-x-0 bottom-0 flex justify-center items-end z-50">
-          <Menu />
-        </div>
+        </main>
       </body>
     </html >
   )
