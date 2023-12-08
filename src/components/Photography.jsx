@@ -20,9 +20,9 @@ export default function Photography() {
             </div>
             <div className='flex overflow-y-auto rounded-lg bg-slate-300/80 p-1'>
                 <div className='flex no-scrollbar flex-row rounded-md gap-1 overflow-y-auto '>
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} className='rounded' />
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} className='rounded' />
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} className='rounded' />
+                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
+                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
+                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
                 </div>
             </div>
         </div>

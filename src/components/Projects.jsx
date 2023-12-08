@@ -43,7 +43,7 @@ export default function Projects() {
 
     return (
         <div className='mx-auto w-full flex flex-col gap-2 '>
-            <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+            <div className='max-w-2xl'>
                 <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Projects</p>
             </div>
             <div className='mx-auto flex flex-col gap-10'>
