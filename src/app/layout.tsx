@@ -23,6 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+
     <html lang="en">
       <body className={`${inter.className} relative flex p-2 items-en pb-28 justify-center`}>
         <DotPattern
