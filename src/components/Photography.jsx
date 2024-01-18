@@ -7,7 +7,7 @@ export default function Photography() {
     const arrowIcon = <Image src={'/arrow-icon.svg'} width={'6'} height={'6'} className=' opacity-80' alt='arrow icon' />
 
     const [images, setImages] = useState([]);
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
 
     useEffect(() => {
         async function fetchImages() {
@@ -22,7 +22,7 @@ export default function Photography() {
                 setImages(data.images);
             } catch (error) {
                 console.error('Error fetching images:', error);
-                setError('Failed to load images.');
+                // setError('Failed to load images.');
             }
         }
 
@@ -40,22 +40,18 @@ export default function Photography() {
                     </Button>
                 </div>
             </div>
-            {/* <div>
-                {error && <p>Error: {error}</p>}
-                {images.map((src, index) => (
-                    console.log({ src }),
-                    <Image key={index} src={src} width={'280'} height={'50'} alt={`Image ${index}`} />
-                ))}
-            </div> */}
             <div className='flex overflow-y-auto rounded-lg bg-slate-300/80 p-1'>
                 <div className='flex no-scrollbar flex-row rounded-md gap-1 overflow-y-auto '>
-                    {/* <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' /> */}
-                    {error && <p>Error: {error}</p>}
+
+                    {/* {error && <p>Error: {error}</p>} */}
                     {images.map((src, index) => (
-                        console.log({ src }),
-                        <Image quality={80} key={index} src={src} width={'280'} height={'50'} alt={`Image ${index}`} />
+                        <Image
+                            key={index}
+                            src={src}
+                            width={'280'}
+                            height={'50'}
+                            alt={`Image ${index}`}
+                        />
                     ))}
                 </div>
 
