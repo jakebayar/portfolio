@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 
@@ -6,6 +6,28 @@ export default function Photography() {
 
     const arrowIcon = <Image src={'/arrow-icon.svg'} width={'6'} height={'6'} className=' opacity-80' alt='arrow icon' />
 
+    const [images, setImages] = useState([]);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        async function fetchImages() {
+            try {
+                const response = await fetch('/api/getPhotos');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch images');
+                }
+                const data = await response.json();
+                console.log(data.images); // Log the data to see its structure
+
+                setImages(data.images);
+            } catch (error) {
+                console.error('Error fetching images:', error);
+                setError('Failed to load images.');
+            }
+        }
+
+        fetchImages();
+    }, []);
     return (
         <div className='flex flex-col gap-4 w-full'>
             <div className='flex flex-col gap-2'>
@@ -18,12 +40,25 @@ export default function Photography() {
                     </Button>
                 </div>
             </div>
+            {/* <div>
+                {error && <p>Error: {error}</p>}
+                {images.map((src, index) => (
+                    console.log({ src }),
+                    <Image key={index} src={src} width={'280'} height={'50'} alt={`Image ${index}`} />
+                ))}
+            </div> */}
             <div className='flex overflow-y-auto rounded-lg bg-slate-300/80 p-1'>
                 <div className='flex no-scrollbar flex-row rounded-md gap-1 overflow-y-auto '>
+                    {/* <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
                     <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
-                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' />
+                    <Image src={'/DSC04397.jpg'} alt='photo' width={'280'} height={'50'} quality={80} className='rounded' /> */}
+                    {error && <p>Error: {error}</p>}
+                    {images.map((src, index) => (
+                        console.log({ src }),
+                        <Image quality={80} key={index} src={src} width={'280'} height={'50'} alt={`Image ${index}`} />
+                    ))}
                 </div>
+
             </div>
         </div>
 
