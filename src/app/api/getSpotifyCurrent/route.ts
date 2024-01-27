@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // In-memory storage for tokens (note: these will reset when your server restarts)
 let ACCESS_TOKEN = '';
-let REFRESH_TOKEN = 'AQD33uYJov6kmb8fIZ9YsF-MUoM7KHRp0uJa2h0IKnpFUAQVThYHd2LVQ9K39wuLWxvWNhqHlfsZX2acUkkX6gFO8o2qzuMZQGYuMjfWvOKhwiB0-Y3YQFfn3Cly8a6dD90';
+let REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
 
 async function refreshAccessToken() {
     const basicHeader = Buffer.from(`${process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString('base64');
@@ -74,6 +74,8 @@ export async function GET(request: NextRequest) {
         }
 
         const recentlyPlayedData = await spotifyResponse.json();
+
+        console.log(recentlyPlayedData.items[0].track);
 
         return new NextResponse(JSON.stringify(recentlyPlayedData.items[0].track), {
             status: 200,
