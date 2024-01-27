@@ -76,30 +76,3 @@ export default function Currently() {
         </section>
     );
 }
-
-// const trackInfo = song;
-
-// const songName = trackInfo.name;
-// const artistsName = trackInfo.artists[0].name
-// const spotifyUrl = trackInfo.external_urls.spotify;
-// const previewUrl = trackInfo.preview_url;
-// const imageUrl = trackInfo.album.images.filter(item => item.height === 300)[0].url;
-
-// const {
-//     name: songName,
-//     artists,
-//     external_urls: { spotify: spotifyUrl },
-//     preview_url: previewUrl,
-//     album: { images }
-// } = song;
-
-// console.log("Song Name:", songName);
-// console.log("Artists:", artistsName);
-// console.log("Spotify URL:", spotifyUrl);
-// console.log("Preview URL:", previewUrl);
-// console.log("Image URL:", imageUrl);
-
-// const songo = <span className='underline decoration-accent-foreground bg-accent/25 decoration-1 px-1 underline-offset-2'> {song.name}</span>
-// const artist = <span className='underline decoration-accent-foreground decoration-1 underline-offset-1'>{song.artists[0].name}</span>
-// const artistsName = artists.map(artist => artist.name).join(", ");
-// const imageUrl = images.find(image => image.height === 300)?.url || images[0].url; // Fallback to the first image if 300px one is not found

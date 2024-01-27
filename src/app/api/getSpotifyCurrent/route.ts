@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// In-memory storage for tokens (note: these will reset when your server restarts)
 let ACCESS_TOKEN = '';
 let REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
 
@@ -52,7 +51,6 @@ export async function GET(request: NextRequest) {
         }
     }
 
-    // Now ACCESS_TOKEN should be set, so use it for Spotify API requests
     try {
         const spotifyResponse = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=1', {
             headers: {
@@ -67,7 +65,6 @@ export async function GET(request: NextRequest) {
             // If the token is expired, it needs to be refreshed
             if (spotifyResponse.status === 401) {
                 await refreshAccessToken();
-                // Retry the Spotify API request with the new access token...
             } else {
                 throw new Error('Failed to fetch data from Spotify');
             }
@@ -75,7 +72,7 @@ export async function GET(request: NextRequest) {
 
         const recentlyPlayedData = await spotifyResponse.json();
 
-        console.log(recentlyPlayedData.items[0].track);
+        console.log(recentlyPlayedData.items[0]);
 
         return new NextResponse(JSON.stringify(recentlyPlayedData.items[0].track), {
             status: 200,
@@ -92,54 +89,3 @@ export async function GET(request: NextRequest) {
         });
     }
 }
-
-
-/**
- *   song.name: 'Bao'
- *   artist.name: 'BaoBao',
- *   external_urls: { spotify: 'https://open.spotify.com/track/0St5oj9IgPyKMfp3LMxykj' },
- *   preview_url: 'https://p.scdn.co/mp3-preview/716e3c4c4cb953c0da15ddf6c7dac403801db8b5?cid=29d102e8644c42a8afb7b9f6f678d16c',
- *   uri: 'spotify:track:0St5oj9IgPyKMfp3LMxykj'
- *   href: 'https://api.spotify.com/v1/tracks/0St5oj9IgPyKMfp3LMxykj',
- */
-
-
-
-// import { NextRequest, NextResponse } from 'next/server';
-
-// export async function GET(request: NextRequest) {
-//     const accessToken = 'BQBevr2hV7puwoSssv9QFlY8PkLv-pVUqwHSZwlfEr89kJtMdrUkTxW6Pm7_EgBGjukGzQCqVZ-i_8vQM23RQfFeWoeSHbi9LC_qed2MS7XuBCoUXC_GdvKcHLwiiMXS-uuS57UxFImKjuc0-6rIEaHNBjjkTnzDjK-pd8NR2r3c73hEFidHnOrfDyJG8NLKp6JBgw'; // Replace with the actual access token
-
-//     if (!accessToken) {
-//         return new NextResponse(JSON.stringify({ error: 'Access Token is missing' }), {
-//             status: 401,
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//         });
-//     }
-
-//     const spotifyResponse = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=1', {
-//         headers: {
-//             'Authorization': `Bearer ${accessToken}`
-//         }
-//     });
-
-//     if (!spotifyResponse.ok) {
-//         // Handle errors from Spotify API
-//         return new NextResponse(JSON.stringify({ error: 'Failed to fetch recently played track' }), {
-//             status: spotifyResponse.status,
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//         });
-//     }
-
-//     const recentlyPlayedData = await spotifyResponse.json();
-//     return new NextResponse(JSON.stringify(recentlyPlayedData.items[0].track), {
-//         status: 200,
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//     });
-// }
