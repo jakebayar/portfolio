@@ -10,12 +10,10 @@ import Menu from '@/components/Menu'
 
 const inter = Montserrat({ subsets: ['latin'] })
 
-
 export const metadata: Metadata = {
-  title: 'jake bayar portfolio',
+  title: 'Jake Bayar ✌🏻🙂 ',
   description: 'contact at contact@jakebayar.com',
 }
-
 
 export default function RootLayout({
   children,
@@ -27,8 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} relative flex p-2 items-en pb-28 justify-center`}>
         <DotPattern
-          width={10}
-          height={10}
+          width={16}
+          height={16}
           cx={1}
           cy={1}
           cr={1}

@@ -60,7 +60,7 @@ export async function GET(request: NextRequest) {
 
         if (!spotifyResponse.ok) {
 
-            console.log(spotifyResponse);
+            // console.log(spotifyResponse);
 
             // If the token is expired, it needs to be refreshed
             if (spotifyResponse.status === 401) {
@@ -72,7 +72,7 @@ export async function GET(request: NextRequest) {
 
         const recentlyPlayedData = await spotifyResponse.json();
 
-        console.log(recentlyPlayedData.items[0]);
+        // console.log(recentlyPlayedData.items[0]);
 
         return new NextResponse(JSON.stringify(recentlyPlayedData.items[0].track), {
             status: 200,

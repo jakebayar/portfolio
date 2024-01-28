@@ -44,34 +44,47 @@ export default function Currently() {
 
     return (
         <section className='flex flex-col text-primary text-sm gap-2'>
-            <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Currently</p>
+            <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>
+                Currently
+            </p>
+
+            <div className="absolute z-10 backdrop-blur-sm shadow-xl p-1 bg-slate-600/30 rounded-sm w-max border border-green"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                <SongInfoBox
+                    song={name}
+                    artist={artists.map(artist => artist.name).join(", ")}
+                    imageUrl={imageUrl}
+                    previewUrl={preview_url}
+                    spotifyUrl={external_urls.spotify}
+                />
+            </div>
 
             <div className="relative inline-block" onMouseLeave={handleMouseLeave}>
-                <p>
-                    Listening to{' '}
-                    <span
-                        className='underline decoration-accent-foreground bg-accent/25 decoration-1 px-1 underline-offset-2 cursor-pointer'
-                        onMouseEnter={handleMouseEnter}
+                Listening to{' '}
+                <span
+                    className='underline decoration-accent-foreground bg-accent/25 decoration-1 px-1 underline-offset-2 cursor-pointer'
+                    onMouseEnter={handleMouseEnter}
+                >
+                    {name}
+                </span>{' '}
+                by <span className='underline decoration-accent-foreground decoration-1 underline-offset-1'>
+                    {artists.map(artist => artist.name).join(", ")}
+                </span>
+                {/* {showInfoBox && (
+                    <div className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-1 bg-white shadow-lg p-4 rounded-lg w-max"
+                        onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
                     >
-                        {song.name}
-                    </span>{' '}
-                    by <span className='underline decoration-accent-foreground decoration-1 underline-offset-1'>
-                        {song.artists[0].name}
-                    </span>
-                    {showInfoBox && (
-                        <div className="absolute z-10  mt-1 bg-white shadow-lg p-4 rounded-lg"
-                            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-                        >
-                            <SongInfoBox
-                                song={name}
-                                artist={artists.map(artist => artist.name).join(", ")}
-                                imageUrl={imageUrl}
-                                previewUrl={preview_url}
-                                spotifyUrl={external_urls.spotify}
-                            />
-                        </div>
-                    )}
-                </p>
+                        <SongInfoBox
+                            song={name}
+                            artist={artists.map(artist => artist.name).join(", ")}
+                            imageUrl={imageUrl}
+                            previewUrl={preview_url}
+                            spotifyUrl={external_urls.spotify}
+                        />
+                    </div>
+                )} */}
             </div>
         </section>
     );
