@@ -48,19 +48,6 @@ export default function Currently() {
                 Currently
             </p>
 
-            <div className="absolute z-10 backdrop-blur-sm shadow-xl p-1 bg-slate-600/30 rounded-sm w-max border border-green"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                <SongInfoBox
-                    song={name}
-                    artist={artists.map(artist => artist.name).join(", ")}
-                    imageUrl={imageUrl}
-                    previewUrl={preview_url}
-                    spotifyUrl={external_urls.spotify}
-                />
-            </div>
-
             <div className="relative inline-block" onMouseLeave={handleMouseLeave}>
                 Listening to{' '}
                 <span
@@ -72,9 +59,10 @@ export default function Currently() {
                 by <span className='underline decoration-accent-foreground decoration-1 underline-offset-1'>
                     {artists.map(artist => artist.name).join(", ")}
                 </span>
-                {/* {showInfoBox && (
-                    <div className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-1 bg-white shadow-lg p-4 rounded-lg w-max"
-                        onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+                {showInfoBox && (
+                    <div className="absolute z-10 backdrop-blur-sm shadow-xl p-1 bg-slate-600/30 rounded-sm w-max border border-green"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
                     >
                         <SongInfoBox
                             song={name}
@@ -84,7 +72,7 @@ export default function Currently() {
                             spotifyUrl={external_urls.spotify}
                         />
                     </div>
-                )} */}
+                )}
             </div>
         </section>
     );
