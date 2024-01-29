@@ -66,6 +66,16 @@
   }
 }
 
+.transition-height {
+  max-height: 0;
+}
+
+/* You'll need to ensure the max-height here is enough to cover the content's actual height. */
+.transition-height.max-h-96 {
+  max-height: 24rem;
+  /* Adjust as needed */
+}
+
 @layer base {
   * {
     @apply border-border;

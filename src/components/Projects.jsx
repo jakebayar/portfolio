@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button"
 import { FaNodeJs, FaReact } from 'react-icons/fa';
 
 export default function Projects() {
-
-
     const arrowIcon = <Image src={'/arrow-icon.svg'} width={'6'} height={'6'} className=' opacity-80' alt='arrow icon' />
 
     const projects = [
@@ -53,7 +51,7 @@ export default function Projects() {
                     <article key={project.key} className='flex flex-col gap-4'>
 
                         <p className='text-sm'>
-                            <strong className='font-bold underline decoration-accent-foreground bg-accent/25 decoration-1 underline-offset-1'>
+                            <strong className='font-bold underline decoration-accent-foreground bg-accent/25 decoration-1 px-1 underline-offset-1'>
                                 {project.name}
                             </strong>
                             {project.intro}

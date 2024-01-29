@@ -12,7 +12,7 @@ import Photography from "@/components/Photography"
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-left justify-between gap-10 p-8 md:p-20 pt-16">
+    <main className="flex min-h-screen flex-col justify-between gap-10 p-8 md:p-20 pt-16">
 
       <header className='flex flex-row items-left'>
         <Image src='/jake-logo.svg' width={60} height={60} alt='personal logo' />
@@ -22,6 +22,7 @@ export default function Home() {
         <h2 className='font-semibold'>Welcome!</h2>
         <p>Im Jake, a software engineer with a passion for blah blah and something about photography teehee 🙂 </p>
       </section>
+
       <section>
         <Currently />
       </section>
@@ -29,6 +30,7 @@ export default function Home() {
       <section>
         <Projects />
       </section>
+
 
       <section>
         <Photography />
