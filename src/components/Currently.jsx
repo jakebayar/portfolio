@@ -48,7 +48,7 @@ export default function Currently() {
                 Currently
             </p>
 
-            <div className="inline-block relative text-center" onMouseLeave={handleMouseLeave}>
+            <div className="inline-block relative" onMouseLeave={handleMouseLeave}>
                 Listening to{' '}
                 <span className='inline-block relative underline decoration-accent-foreground bg-accent/25 decoration-1 px-1 underline-offset-2 cursor-pointer' onMouseEnter={handleMouseEnter}>
                     {name}
