@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import '../app/globals.css'
 
 import { Button } from "@/components/ui/button"
 
@@ -72,13 +73,13 @@ export default function Projects() {
                             <Button
                                 variant="outline"
                                 size='sm'
-                                className='flex font-light w-20 min-w-20 h-6 text-xs gap-1.5 items-center justify-center'>
+                                className='flex font-light w-16 min-w-20 h-6 text-xs gap-1.5 items-center justify-center'>
                                 Code {arrowIcon}
                             </Button>
                             <Button
                                 variant="outline"
                                 size='sm'
-                                className='flex font-light w-20 min-w-20 h-6 text-xs gap-1.5 items-center justify-center'>
+                                className='flex font-light w-16 min-w-20 h-6 text-xs gap-1.5 items-center justify-center'>
                                 Visit {arrowIcon}
                             </Button>
                         </div>
