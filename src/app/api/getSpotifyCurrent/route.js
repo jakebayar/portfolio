@@ -36,7 +36,7 @@ async function refreshAccessToken() {
     }
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(request) {
     // If there's no access token or it is assumed expired, refresh it
     if (!ACCESS_TOKEN) {
         try {

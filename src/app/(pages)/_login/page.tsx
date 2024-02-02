@@ -11,9 +11,9 @@ const Login = () => {
         console.log('Redirect URI:', redirectUri);
 
         const scopes = ['user-read-private', 'user-read-email', 'user-read-recently-played', 'user-read-playback-state']; // Add other scopes as needed
-        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scopes.join(' '))}`!;
+        // const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scopes.join(' '))}`!;
 
-        window.location.href = authUrl;
+        // window.location.href = authUrl;
     }, []);
 
     return <div>Redirecting to Spotify...</div>;
