@@ -84,7 +84,6 @@ export default function Projects() {
                         </div>
 
                     </article>
-
                 ))}
             </div>
         </div>

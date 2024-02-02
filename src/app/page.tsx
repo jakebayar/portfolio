@@ -31,7 +31,6 @@ export default function Home() {
         <Projects />
       </section>
 
-
       <section>
         <Photography />
       </section>

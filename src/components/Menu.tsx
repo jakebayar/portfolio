@@ -90,7 +90,6 @@ export default function Menu() {
                             );
                         })
                     }
-                    <Divider />
                     {
                         socialMenuItems.map((item) => {
                             return (
