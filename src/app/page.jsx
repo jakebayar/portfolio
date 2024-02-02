@@ -36,7 +36,7 @@ export default function Home() {
       </section>
 
       <div className='flex flex-col gap-4 text-primary text-xs'>
-        <p>This website is a constant work in progress. If you have any feedback please let me know :)</p>
+        <p>This website is a constant work in progress. If you have any feedback please let me know.</p>
       </div>
     </main >
   )
