@@ -39,6 +39,9 @@ module.exports = {
         },
         // Include other color configurations here
       },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

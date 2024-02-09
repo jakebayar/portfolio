@@ -76,7 +76,7 @@ export default function Menu() {
     };
 
     return (
-        <div className="flex flex-row overflow-x-auto no-scrollbar backdrop-blur-sm shadow-xl rounded-3xl bg-slate-600/30 p-2 mx-12 mb-4 md:mb-8">
+        <div className="flex flex-row overflow-x-auto no-scrollbar backdrop-blur-sm shadow-xl border border-slate-600/20 shadow-inner rounded-3xl bg-slate-600/30 p-2 mx-12 mb-4 md:mb-8">
             <div className='flex flex-row rounded-2xl overflow-x-auto no-scrollbar'>
                 <div className='flex flex-row gap-1.5 text-primary justify-center items-center'>
                     {

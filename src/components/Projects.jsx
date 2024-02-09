@@ -45,11 +45,11 @@ export default function Projects() {
             <div className='max-w-2xl'>
                 <p className='font-Inter text-xs font-medium tracking-normal text-slate-400 sm:text-md'>Projects</p>
             </div>
-            <div className='mx-auto flex flex-col gap-10'>
+            <div className='mx-auto flex flex-col gap-8'>
 
                 {projects.map((project) => (
 
-                    <article key={project.key} className='flex flex-col gap-4'>
+                    <article key={project.key} className='flex flex-col gap-3'>
 
                         <p className='text-sm'>
                             <strong className='font-bold underline decoration-accent-foreground bg-accent/25 decoration-1 underline-offset-1'>

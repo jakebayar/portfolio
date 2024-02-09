@@ -1,0 +1,51 @@
+
+import { Montserrat } from 'next/font/google'
+import './globals.css'
+import { cn } from '@/lib/utils'
+
+import { DotPattern } from '@/components/dot-pattern'
+import { ThemeProvider } from "@/components/theme-provider"
+
+import Menu from '@/components/Menu'
+
+const montserrat = Montserrat({ subsets: ['latin'] });
+
+export const metadata = {
+  title: 'Jake Bayar ✌🏻🙂 ',
+  description: 'contact at contact@jakebayar.com',
+}
+
+export default function RootLayout({
+  children
+}) {
+  return (
+
+    <html lang="en" >
+
+      <body className={`${montserrat.className} relative flex p-2 items-en pb-28 justify-center`}>
+        <DotPattern
+          width={16}
+          height={16}
+          cx={1}
+          cy={1}
+          cr={1}
+          className={`absolute inset-0 z-0 opacity-30`}
+        />
+        <main className='relative flex max-w-3xl z-10'>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem={true}
+          // disableTransitionOnChange
+          >
+            {children}
+            <footer className="fixed inset-x-0 bottom-0 flex justify-center items-end z-50">
+              <Menu />
+            </footer>
+          </ThemeProvider>
+
+        </main>
+      </body>
+    </html >
+  )
+}
