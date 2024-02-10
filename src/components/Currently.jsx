@@ -50,7 +50,7 @@ export default function Currently() {
 
             <div className="inline-block relative" onMouseLeave={handleMouseLeave}>
                 Listening to{' '}
-                <span className='inline-block relative underline decoration-accent-foreground bg-accent/25 decoration-1 px-1 underline-offset-2 cursor-pointer' onMouseEnter={handleMouseEnter}>
+                <span className='inline-block relative underline decoration-accent-foreground bg-accent/25 decoration-1 underline-offset-2 cursor-pointer' onMouseEnter={handleMouseEnter}>
                     {name}
                     {showInfoBox && (
                         <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 z-10 backdrop-blur-sm shadow-xl p-1 bg-primary/30 rounded-sm w-max border border-green"
