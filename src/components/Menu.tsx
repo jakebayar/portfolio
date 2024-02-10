@@ -54,13 +54,13 @@ const socialMenuItems = [
 ]
 const Divider = () => <div className="h-6 w-px bg-primary/20 mx-1"></div>;
 
-
 export default function Menu() {
 
     const { theme, resolvedTheme, setTheme } = useTheme();
     const [isMounted, setIsMounted] = useState(false);
 
     const toggleTheme = () => {
+        const currentTheme = resolvedTheme || theme;
         setTheme(theme === 'light' ? 'dark' : 'light')
     };
 
@@ -68,14 +68,16 @@ export default function Menu() {
         setIsMounted(true);
     }, []);
 
-    const currentTheme = resolvedTheme || theme;
 
-    const renderThemeToggleIcon = () => {
-        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-    };
+
+    // const renderThemeToggleIcon = () => {
+    //     setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    // };
+
+    const themeIcon = resolvedTheme === 'dark' || (resolvedTheme === 'system' && theme === 'dark') ? <Sun className='h-5 w-5' /> : <Moon className="h-5 w-5" />;
 
     if (!isMounted) {
-        renderThemeToggleIcon()
+        // renderThemeToggleIcon()
         return null; // or a loader/placeholder
     }
 
@@ -107,8 +109,8 @@ export default function Menu() {
                     }
                     <Divider />
                     <Button variant="outline" size="icon" onClick={toggleTheme} className='w-11 h-11 rounded-2xl text-slate-500'>
-                        {currentTheme === 'dark' ? <Sun className='h-5 w-5' /> : <Moon className="h-5 w-5" />}
-
+                        {/* {currentTheme === 'dark' ? <Sun className='h-5 w-5' /> : <Moon className="h-5 w-5" />} */}
+                        {themeIcon}
                     </Button>
 
                 </div>
