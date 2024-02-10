@@ -75,6 +75,7 @@ export default function Menu() {
     };
 
     if (!isMounted) {
+        renderThemeToggleIcon()
         return null; // or a loader/placeholder
     }
 
